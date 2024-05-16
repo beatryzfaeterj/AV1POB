@@ -88,7 +88,7 @@ package avpob;
 
                     Produto produto = new Produto(id, codigoBarras, sku, nome, descricao, categoria, preco, peso, fabricante);
                     produtos.add(produto);
-                    System.out.println("Produto incluído com sucesso!");
+                    System.out.println("Produto adicionado!");
                 }
 
                 public void excluirProduto() {
@@ -96,7 +96,7 @@ package avpob;
                     int id = scanner.nextInt();
                     boolean removido = produtos.removeIf(p -> p.getId() == id);
                     if (removido) {
-                        System.out.println("Produto excluído com sucesso!");
+                        System.out.println("Produto excluído.");
                     } else {
                         System.out.println("Produto não encontrado.");
                     }
@@ -127,47 +127,47 @@ package avpob;
                                     break;
                                 case 2:
                                     System.out.println("Insira a nova descrição: ");
-                                    produto.setDescricao(sc.next());
+                                    produto.setDescricao(scanner.next());
                                     break;
                                 case 3:
                                     System.out.println("Insira a nova categoria: ");
-                                    produto.setCategoria(sc.next());
+                                    produto.setCategoria(scanner.next());
                                     break;
                                 case 4:
                                     System.out.println("Insira o novo preço: ");
-                                    while (!sc.hasNextDouble()) {
+                                    while (!scanner.hasNextDouble()) {
                                         System.out.println("Por favor, insira um preço válido: ");
-                                        sc.next();
+                                        scanner.next();
                                     }
-                                    produto.setPreco(sc.nextDouble());
+                                    produto.setPreco(scanner.nextDouble());
                                     break;
                                 case 5:
                                     System.out.println("Insira o novo peso: ");
-                                    while (!sc.hasNextDouble()) {
+                                    while (!scanner.hasNextDouble()) {
                                         System.out.println("Por favor, insira um peso válido: ");
-                                        sc.next();
+                                        scanner.next();
                                     }
-                                    produto.setPeso(sc.nextDouble());
+                                    produto.setPeso(scanner.nextDouble());
                                     break;
                                 case 6:
                                     System.out.println("Insira o novo fabricante: ");
-                                    produto.setFabricante(sc.next());
+                                    produto.setFabricante(scanner.next());
                                     break;
                                 case 7:
                                     System.out.println("Insira o novo código de barras: ");
-                                    produto.setCodigoDeBarras(sc.next());
+                                    produto.setCodigoBarras(scanner.nextLine());
                                     break;
                                 case 8:
                                     System.out.println("Insira o novo SKU: ");
-                                    produto.setSku(sc.next());
+                                    produto.setSku(scanner.next());
                                     break;
                             }
-                            System.out.println("Produto alterado com sucesso!");
+                            System.out.println("Deu green!");
                             return; 
                         }
                     }
-                    System.out.println("Produto não encontrado.");
+                    System.out.println("Deu red.");
                 }
             }
      
-            
+           
